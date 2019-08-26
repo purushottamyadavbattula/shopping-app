@@ -1,0 +1,22 @@
+{
+  "name": "shopping_app",
+  "version": "1.0.0",
+  "description": "This is shopping app ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Samatha",
+  "license": "ISC",
+  "devDependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express-validator": "^5.3.1",
+    "popups": "^1.1.3"
+  }
+}

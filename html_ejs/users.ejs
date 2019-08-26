@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Users</title>
+    <style>
+        a:hover,
+        a:active,
+        a:active {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container' style="background-color: rgb(81, 218, 236);border-radius:30px">
+        <h1>Users</h1>
+        <div class='row'>
+            <div class='col-sm-8 '>
+                <h4 style='background-color: rgb(172, 171, 171);border-radius: 15px; padding:5px;'>&nbsp Id &nbsp &nbsp Name&nbsp &nbsp &nbsp Password </h4>
+                <% var i=0 %>
+                <% while (i<arr.length) { %>
+                <p style='background-color: rgb(201, 197, 197);border-radius: 10px;'>&nbsp<%=arr[i].id %> &nbsp &nbsp <%= arr[i].name %> &nbsp &nbsp <%= arr[i].password %> </p>
+                <%i=i+1%>
+                <%}%>
+            </div>
+            <div class='col-sm-3' style="background-color: rgb(238, 230, 230); border-radius: 10px">
+                </br>
+                    Delete id:<div>
+                        <form method='POST' action='/del'>
+                            <input type='number' name='delindex' style="border-radius:10px">
+                            <button type='submit' style="border-radius:20px">del</button>
+                        </form></br>
+                        Edit id:<div>
+                                <form method='POST' action='/edt'>  
+                                    <input type='number' name='id' style="border-radius:10px">
+                                    <button type='submit' style="border-radius:20px">edt</button>
+                                </br>    
+                                </br>New Details:</div>
+                                    <input type='text' name='name' style="border-radius:10px">:Name
+                                    <input type='text' name='password' style="border-radius:10px" >:Password
+                                </form>
+                        </div></br>
+                        single user id:<div>
+                                <form method='POST' action='/snguser'>
+                                    <input type='number' name='id' style="border-radius:10px">
+                                    <button type='submit' style="border-radius:20px">get usr</button>
+                                </form></br>
+                                <p style='background-color: rgb(201, 197, 197);border-radius: 10px;'><%=sngl.id %>    <%= sngl.name %>  <%= sngl.password %> </p>
+                            </br><div><a href="/">Log out</a></div></br>
+                    </br>
+                </div>
+        </div>
+        </br>
+    </div>
+
+
+
+</body>
+
+</html>
